@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://yymks8bqn0mf"]
+[gd_scene load_steps=8 format=3 uid="uid://yymks8bqn0mf"]
 
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_e8wrc"]
 [ext_resource type="Texture2D" uid="uid://b64hrs1jb0oy8" path="res://Texture/MainMenu.png" id="1_f0lim"]
 [ext_resource type="FontFile" uid="uid://lfgkr3lojd4b" path="res://Fonts/歌以晓手迹行楷体.ttf" id="2_762nl"]
-[ext_resource type="Texture2D" uid="uid://dso5jl08w27ly" path="res://Texture/SelectionBox.png" id="3_3pbjk"]
+[ext_resource type="Texture2D" uid="uid://dso5jl08w27ly" path="res://Texture/Selection/SelectionBox.png" id="3_3pbjk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5lqoy"]
 font = ExtResource("2_762nl")
@@ -20,19 +21,8 @@ font_size = 24
 font = ExtResource("2_762nl")
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_y7rgu"]
-font = ExtResource("2_762nl")
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_0784p"]
-font = ExtResource("2_762nl")
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_0a7hb"]
-font = ExtResource("2_762nl")
-font_size = 32
-
-[node name="Node2D" type="Node2D"]
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_e8wrc")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
@@ -51,89 +41,80 @@ text = "广
 label_settings = SubResource("LabelSettings_5lqoy")
 
 [node name="Poem" type="Label" parent="."]
-offset_left = 741.0
-offset_top = 1.0
-offset_right = 837.0
-offset_bottom = 537.0
-text = "吾呜风安
-庐呼雨得
-独，不广
-破何动厦
-受时安千
-冻眼如万
-死前山间
-亦突！，
-足兀    大
-！见    庇
-此        天
-屋        下
-，        寒
-            士
-            俱
-            欢
-            颜
-            ，
-"
+offset_left = 457.0
+offset_top = 446.0
+offset_right = 937.0
+offset_bottom = 513.0
+text = "安得广厦千万间?大庇天下寒士俱欢颜！
+何时眼前突兀见此屋，吾庐独破受冻死亦足！"
 label_settings = SubResource("LabelSettings_1y2po")
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="StartButton" type="Node" parent="Buttons"]
-
-[node name="Start" type="Sprite2D" parent="Buttons/StartButton"]
-position = Vector2(73, 278.5)
-scale = Vector2(1, 0.3)
-texture = ExtResource("3_3pbjk")
+[node name="StartButton" type="TextureButton" parent="Buttons"]
+offset_left = -140.0
+offset_top = 250.0
+offset_right = 260.0
+offset_bottom = 300.0
+texture_normal = ExtResource("3_3pbjk")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="Buttons/StartButton"]
-offset_left = 30.0
-offset_top = 260.0
-offset_right = 158.0
-offset_bottom = 293.0
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 38.0
 text = "江湖缘起"
 label_settings = SubResource("LabelSettings_oqhlf")
 
-[node name="LoadButton" type="Node" parent="Buttons"]
-
-[node name="Load" type="Sprite2D" parent="Buttons/LoadButton"]
-position = Vector2(51, 346.237)
-scale = Vector2(1, 0.3)
-texture = ExtResource("3_3pbjk")
+[node name="LoadButton" type="TextureButton" parent="Buttons"]
+offset_left = -135.0
+offset_top = 320.0
+offset_right = 265.0
+offset_bottom = 370.0
+texture_normal = ExtResource("3_3pbjk")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="Buttons/LoadButton"]
-offset_left = 35.0
-offset_top = 329.0
-offset_right = 163.0
-offset_bottom = 362.0
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 38.0
 text = "再续前缘"
-label_settings = SubResource("LabelSettings_y7rgu")
+label_settings = SubResource("LabelSettings_oqhlf")
 
-[node name="SettingsButton" type="Node" parent="Buttons"]
+[node name="SettingButton" type="TextureButton" parent="Buttons"]
+offset_left = -130.0
+offset_top = 390.0
+offset_right = 270.0
+offset_bottom = 440.0
+texture_normal = ExtResource("3_3pbjk")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Settings" type="Sprite2D" parent="Buttons/SettingsButton"]
-position = Vector2(95, 414)
-scale = Vector2(1, 0.3)
-texture = ExtResource("3_3pbjk")
+[node name="Label" type="Label" parent="Buttons/SettingButton"]
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 38.0
+text = "风云变换"
+label_settings = SubResource("LabelSettings_oqhlf")
 
-[node name="Label" type="Label" parent="Buttons/SettingsButton"]
-offset_left = 40.0
-offset_top = 395.0
-offset_right = 168.0
-offset_bottom = 428.0
-text = "风云变幻"
-label_settings = SubResource("LabelSettings_0784p")
-
-[node name="OnlineButton" type="Node" parent="Buttons"]
-
-[node name="Online" type="Sprite2D" parent="Buttons/OnlineButton"]
-position = Vector2(138, 484)
-scale = Vector2(1, 0.3)
-texture = ExtResource("3_3pbjk")
+[node name="OnlineButton" type="TextureButton" parent="Buttons"]
+offset_left = -125.0
+offset_top = 460.0
+offset_right = 275.0
+offset_bottom = 510.0
+texture_normal = ExtResource("3_3pbjk")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="Buttons/OnlineButton"]
-offset_left = 45.0
-offset_top = 465.0
-offset_right = 173.0
-offset_bottom = 498.0
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 38.0
 text = "金榜题名"
-label_settings = SubResource("LabelSettings_0a7hb")
+label_settings = SubResource("LabelSettings_oqhlf")
